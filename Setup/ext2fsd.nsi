@@ -24,16 +24,16 @@ OutFile "${PROJECTNAME}-setup.exe"
 
 ; the paths to the binaries when compiled with Visual Studio to support Windows 10.
 ; (the driver files are automatically signed or testsigned by Visual Studio)
-!define MGRPATH_X86 "..\Ext2Mgr\Release\x86"
+;!define MGRPATH_X86 "..\Ext2Mgr\Release\x86"
 !define MGRPATH_X64 "..\Ext2Mgr\Release\x64"
-!define SRVPATH_X86 "..\Ext2Srv\Release\x86"
+;!define SRVPATH_X86 "..\Ext2Srv\Release\x86"
 !define SRVPATH_X64 "..\Ext2Srv\Release\x64"
-!define SYSPATH_X86 "..\Ext4Fsd\Release\x86"
+;!define SYSPATH_X86 "..\Ext4Fsd\Release\x86"
 !define SYSPATH_X64 "..\Ext4Fsd\Release\x64"
-!define MSVPATH_X86 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.28.29325\x86\Microsoft.VC142.CRT"
-!define MSVPATH_X64 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.28.29325\x64\Microsoft.VC142.CRT"
-!define MFCPATH_X86 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.28.29325\x86\Microsoft.VC142.MFC"
-!define MFCPATH_X64 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.28.29325\x64\Microsoft.VC142.MFC"
+!define MSVPATH_X86 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.29.30133\x86\Microsoft.VC142.CRT"
+!define MSVPATH_X64 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.29.30133\x64\Microsoft.VC142.CRT"
+!define MFCPATH_X86 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.29.30133\x86\Microsoft.VC142.MFC"
+!define MFCPATH_X64 "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.29.30133\x64\Microsoft.VC142.MFC"
 !define VCDLL_X86 "vcruntime140"
 !define VCDLL_X64 "vcruntime140_1"
 !define MFCDLL "mfc140"
@@ -94,13 +94,13 @@ IfFileExists $WINDIR\SysWOW64\*.* 0 else
     File "${SYSPATH_X64}\${DRIVERNAME}.sys"
     Goto endif
 else:
-    ; 32-bit.
+/*     ; 32-bit.
     File "${MSVPATH_X86}\${VCDLL_X86}.dll"
     File "${MFCPATH_X86}\${MFCDLL}.dll"
     File "${MGRPATH_X86}\Ext2Mgr.exe"
     File "${SRVPATH_X86}\Ext2Srv.exe"
     File "${SYSPATH_X86}\${DRIVERNAME}.pdb"
-    File "${SYSPATH_X86}\${DRIVERNAME}.sys"
+    File "${SYSPATH_X86}\${DRIVERNAME}.sys" */
 endif:
 
 File "..\ext4fsd\${DRIVERNAME}.inf"
