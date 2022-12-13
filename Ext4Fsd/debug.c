@@ -2687,7 +2687,7 @@ Ext2AllocatePool(
     IN ULONG Tag
 )
 {
-    return ExAllocatePoolWithTag(
+    return ExAllocatePool2(
                PoolType,
                NumberOfBytes,
                Tag);
